@@ -3,6 +3,9 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Cowsayphp\Farm;
 
+$conn_string = getenv("mongo_connection_string");
+$db = new MongoDB\Client($conn_string);
+
 header('Content-Type: text/plain');
 
 $text = "Set a message by adding ?message=<message here> to the URL. MongoDB should be loaded?";
